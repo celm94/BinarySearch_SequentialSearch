@@ -33,8 +33,9 @@ public class BinarySecuentialSearch {
 
 
         System.out.println("BÚSQUEDA SECUENCIAL");
-        int num2 = scanner.nextInt();
         System.out.println("Ingrese el número que desea buscar:\n");
+        int num2 = scanner.nextInt();
+
 
         int sesearching = SecuentialSearch(array, num2);
         if (sesearching!= -1) {
@@ -43,15 +44,7 @@ public class BinarySecuentialSearch {
             System.out.println("El número no se encuentra");
 
         }
-
-
-
-
-
-
-
-
-
+        
 
 
     }
