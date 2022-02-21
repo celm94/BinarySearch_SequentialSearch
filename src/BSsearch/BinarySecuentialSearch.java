@@ -6,45 +6,72 @@ import java.util.Scanner;
 public class BinarySecuentialSearch {
 
     public static void main(String[] args) {
-
-        System.out.println("\n\n***MÉTODOS DE BÚSQUEDA***\n");
-        System.out.println("ARRAY DE EJEMPLO:\n");
-        int array[]={56,9985,85,526,45578,7844,1,2532,46578,5415,7981,56875,89,8525};
-        System.out.println(Arrays.toString(array)+"\n");
-        Arrays.sort(array);
-
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Escojer opción:");
+        System.out.println("1. Probar métodos de búsqueda");
+        System.out.println("2. Salir");
+        int e = scanner.nextInt();
 
-        System.out.println("BÚSQUEDA BINARIA");
-        System.out.println("Arreglo Ordenado:");
-        System.out.println(Arrays.toString(array)+"\n");
-        System.out.println("Ingrese el número que desea buscar:\n");
-        int num = scanner.nextInt();
-        int searching = BinarySearch(array, num);
+        while(e!=2){
 
-        if (searching== -1){
-            System.out.println("número no encontrado");
+            switch(e){
+                case 1:
+                    System.out.println("\n\n***MÉTODOS DE BÚSQUEDA***\n");
+                    System.out.println("BÚSQUEDA BINARIA");
+                    System.out.println("ARRAY DE EJEMPLO:\n");
+                    int array[]={56,9985,85,526,45578,7844,1,2532,46578,5415,7981,56875,89,8525};
+                    System.out.println(Arrays.toString(array)+"\n");
+                    Arrays.sort(array);
+                    System.out.println("Arreglo Ordenado:");
+                    System.out.println(Arrays.toString(array)+"\n");
+                    System.out.println("Ingrese el número que desea buscar:\n");
+                    int num = scanner.nextInt();
+                    int searching = BinarySearch(array, num);
+
+                    if (searching== -1){
+                        System.out.println("número no encontrado");
+                    }
+                    else{
+
+                        System.out.println("El número se encuentra en el array en la posición: "+ searching +"\n\n");
+
+                    }
+
+
+                    System.out.println("BÚSQUEDA SECUENCIAL");
+                    System.out.println("ARRAY DE EJEMPLO:\n");
+                    int array2[]={14,20,598,257897,15,1,5,2,8,7,9};
+                    System.out.println(Arrays.toString(array2) + "\n");
+
+                    System.out.println("Ingrese el número que desea buscar:\n");
+                    int num2 = scanner.nextInt();
+
+
+                    int sesearching = SecuentialSearch(array2, num2);
+                    if (sesearching!= -1) {
+                        System.out.println("El número se encuentra en la posición:" +sesearching);
+                    } else {
+                        System.out.println("El número no se encuentra");
+
+                    }
+                    break;
+
+
+                case 2:
+                    break;
+
+                default:
+                    System.out.println("escoja una opción válida");
+
+
+            }
+
+
         }
-        else{
-
-            System.out.println("El número se encuentra en el array en la posición: "+ searching +"\n\n");
-
-        }
 
 
-        System.out.println("BÚSQUEDA SECUENCIAL");
-        System.out.println("Ingrese el número que desea buscar:\n");
-        int num2 = scanner.nextInt();
 
 
-        int sesearching = SecuentialSearch(array, num2);
-        if (sesearching!= -1) {
-            System.out.println("El número se encuentra en la posición:" +searching);
-        } else {
-            System.out.println("El número no se encuentra");
-
-        }
-        
 
 
     }
@@ -71,10 +98,12 @@ public class BinarySecuentialSearch {
         return -1;
     }
 
-    public static int SecuentialSearch(int array[], int Sesearched) {
+    public static int SecuentialSearch(int array2[], int Sesearched) {
         System.out.println("");
-        for (int i = 0; i < 10; i++){
-            if(Sesearched == array[i]) {
+        boolean found=false;
+        for (int i = 0; i < array2.length  && found==false; i++){
+            if(Sesearched == array2[i]) {
+                found = true;
                 return i;
             }
         }
