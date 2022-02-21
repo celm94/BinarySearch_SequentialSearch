@@ -6,13 +6,15 @@ import java.util.Scanner;
 public class BinarySecuentialSearch {
 
     public static void main(String[] args) {
+        int cont =0;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Escojer opción:");
-        System.out.println("1. Probar métodos de búsqueda");
-        System.out.println("2. Salir");
-        int e = scanner.nextInt();
 
-        while(e!=2){
+
+        while(cont!=1){
+            System.out.println("Escojer opción:");
+            System.out.println("1. Probar métodos de búsqueda");
+            System.out.println("2. Salir");
+            int e = scanner.nextInt();
 
             switch(e){
                 case 1:
@@ -58,6 +60,7 @@ public class BinarySecuentialSearch {
 
 
                 case 2:
+                    cont=1;
                     break;
 
                 default:
@@ -65,6 +68,7 @@ public class BinarySecuentialSearch {
 
 
             }
+
 
 
         }
